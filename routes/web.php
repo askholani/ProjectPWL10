@@ -19,3 +19,5 @@ Route::get('/a', function () {
 });
 
 Route::resource('articles', ArticleController::class);
+
+Route::post('/articles/{id}', [ArticleController::class, 'update'])->name('articles.update');

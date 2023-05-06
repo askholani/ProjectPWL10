@@ -1,10 +1,10 @@
 @extends('articles.app');
 @section('main-content')
-    ;
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <div class="container">
         <form action="/articles" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label for="title">Title : </label>
                 <input type="text" class="form-control" required="required" name="title">
