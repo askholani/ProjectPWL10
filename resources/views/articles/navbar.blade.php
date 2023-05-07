@@ -14,6 +14,10 @@
          <li class="nav-item d-none d-sm-inline-block">
              <a href="{{ route('articles.create') }}" class="nav-link">Tambah</a>
          </li>
+         <li class="nav-item d-none d-sm-inline-block">
+
+             <a href="{{ route('articles.cetak') }}" class="nav-link">Cetak</a>
+         </li>
      </ul>
 
      <!-- Right navbar links -->

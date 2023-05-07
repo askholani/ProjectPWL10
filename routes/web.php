@@ -21,3 +21,5 @@ Route::get('/a', function () {
 Route::resource('articles', ArticleController::class);
 
 Route::post('/articles/{id}', [ArticleController::class, 'update'])->name('articles.update');
+
+Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf'])->name('articles.cetak');

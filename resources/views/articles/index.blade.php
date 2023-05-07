@@ -1,4 +1,4 @@
 @extends('articles.app')
 @section('main-content')
-    <p>{{ $articles }}</p>
+    {{-- <p>{{ $articles }}</p> --}}
 @endsection

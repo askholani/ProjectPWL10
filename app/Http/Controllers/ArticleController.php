@@ -6,6 +6,7 @@ use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\PDF;
 
 class ArticleController extends Controller
 {
@@ -111,5 +112,15 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+    }
+
+    public function cetak_pdf () {
+        $articles = Article::all();
+        $pdf = PDF::loadview('articles.articles_pdf' ,['articles'=>$articles]);
+        // membuat file PDF dengan menggunakan view articles_pdf.blade.php dan data yang diberikan dalam variabel $articles.
+
+        return $pdf->stream();
+        // mengembalikan file PDF dalam bentuk stream ke browser pengguna, sehingga pengguna dapat melihat dan menyimpan file PDF tersebut di komputernya.
+        // "Mengembalikan file PDF dalam bentuk stream" berarti menghasilkan file PDF langsung ke browser sebagai output stream tanpa menyimpannya di server atau sistem file
     }
 }
